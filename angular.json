@@ -84,13 +84,16 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
-              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "/node_modules/jquery/dist/jquery.js",
+              "/node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           }
         },
         "lint": {
@@ -123,6 +126,6 @@
   },
   "defaultProject": "MegaSena",
   "cli": {
-    "analytics": "a03d3cd4-1acd-4274-9673-70b09569c7a8"
+    "analytics": false
   }
 }

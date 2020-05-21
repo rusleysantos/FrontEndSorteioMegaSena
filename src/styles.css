@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+#conteudo{
+    margin-top: 20px;
+
+}
+
+#logo{
+    width: 400px;
+}
