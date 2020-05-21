@@ -4,6 +4,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { ReturnMessage } from '../models/return-message';
+import { Raffle } from '../models/raffle';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,8 @@ export class RaffleService {
     return this.httpClient.get<number[]>(`/api/RandomNumber/?quantityNumbers=6`)
   }
 
-  CheckResult(raffleDataUser: RaffleDataUser): Observable<ReturnMessage> {
-    return this.httpClient.post<ReturnMessage>(`/api/CheckResult/`, raffleDataUser, this.httpOptions)
+  CheckResult(raffleDataUser: RaffleDataUser): Observable<Raffle> {
+    return this.httpClient.post<Raffle>(`/api/CheckResult/`, raffleDataUser, this.httpOptions)
   }
 
 }

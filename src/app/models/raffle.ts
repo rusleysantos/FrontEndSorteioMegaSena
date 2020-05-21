@@ -5,4 +5,6 @@ export interface Raffle {
     NumbersHit: number[];
     NumbersResult: number[];
     NumbersUser: number[];
+    Date: Date;
 }
+
