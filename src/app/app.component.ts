@@ -42,7 +42,7 @@ export class AppComponent {
 
     this.raffleService.CheckResult(this.raffleDataUser).subscribe((returnMessage: ReturnMessage) => {
       this.returnMessage = returnMessage;
-      debugger;
+     
     });
 
   }
