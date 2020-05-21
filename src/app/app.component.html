@@ -15,21 +15,93 @@
       </div>
 
       <p></p>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text">E os números premiados são:</span>
+      <form (ngSubmit)="Raffle($event)">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">E os números premiados são:</span>
+          </div>
+
+          <button (click)="Random()" type="button" class="btn btn-secondary form-control"><i
+              class="fas fa-random"></i></button>
+          <input type="number" value="{{listRandomNumbers[0]}}" name="inptUm" id="inptUm" min="0" max="60"
+            class="form-control" ngModel>
+          <input type="number" value="{{listRandomNumbers[1]}}" name="inptDois" id="inptDois" min="0" max="60"
+            class="form-control" ngModel>
+          <input type="number" value="{{listRandomNumbers[2]}}" name="inptTres" id="inptTres" min="0" max="60"
+            class="form-control" ngModel>
+          <input type="number" value="{{listRandomNumbers[3]}}" name="inptQuatro" id="inptQuatro" min="0" max="60"
+            class="form-control" ngModel>
+          <input type="number" value="{{listRandomNumbers[4]}}" name="inptCinco" id="inptCinco" min="0" max="60"
+            class="form-control" ngModel>
+          <input type="number" value="{{listRandomNumbers[5]}}" name="inptSeis" id="inptSeis" min="0" max="60"
+            class="form-control" ngModel>
+          <button type="submit" class="btn btn-success form-control" data-toggle="modal"
+            data-target="#exampleModal">Vai!</button>
+
         </div>
-        <button (click)="Random()" type="button" class="btn btn-secondary form-control"><i class="fas fa-random"></i></button>
-        <input type="number" min="0" max="60" aria-label="First name" class="form-control">
-        <input type="number" min="0" max="60" aria-label="Last name" class="form-control">
-        <input type="number" min="0" max="60" aria-label="Last name" class="form-control">
-        <input type="number" min="0" max="60" aria-label="Last name" class="form-control">
-        <input type="number" min="0" max="60" aria-label="Last name" class="form-control">
-        <input type="number" min="0" max="60" aria-label="Last name" class="form-control">
-        <button type="button" class="btn btn-success form-control">Vai!</button>
-      </div>
+      </form>
     </div>
   </div>
 
 
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">{{returnMessage.status}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="d-flex justify-content-center">
+        </div>
+          <div class="row">
+            <div class="col-md-12">
+
+              <h3>{{returnMessage.messageUser}}</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+
+              <p>{{returnMessage.data.result}}</p>
+            </div>
+          </div>
+       
+          <hr>
+        <div class="row d-flex justify-content-cente">
+
+          <div class="col-md-4">
+            <div>Você jogou:</div>
+            {{returnMessage.data.numbersUser}}
+          </div>
+
+          <div class="col-md-4">
+            <div>Resultado:</div>
+            {{returnMessage.data.numbersResult}}
+          </div>
+
+          <div class="col-md-4">
+            <div>Acertou:</div>
+            {{returnMessage.data.numbersHit}}
+          </div>
+
+        </div>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>
