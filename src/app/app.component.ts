@@ -49,17 +49,17 @@ export class AppComponent {
     ${(form.target.inptSeis.value)}
     `
 
-    this.raffleService.CheckResult(this.raffleDataUser).subscribe((raffle: Raffle) => {
+    this.raffleService.CheckResult(this.raffleDataUser).subscribe((raffle: any) => {
       debugger;
 
      
         this.Status = "Sucesso";
-        this.MessageUser = "Sucesso";
-        this.Result = raffle.Result;
-        this.NumbersUser = raffle.NumbersUser;
-        this.NumbersResult = raffle.NumbersResult;
-        this.NumbersHit = raffle.NumbersResult;
-     
+        this.MessageUser = "Ocorreu tudo bem ao realizar o sorteio";
+        this.Result = raffle.result;
+        this.NumbersUser = raffle.numbersUser;
+        this.NumbersResult = raffle.numbersResult;
+        this.NumbersHit = raffle.numbersHit;
+       
 
     });
 

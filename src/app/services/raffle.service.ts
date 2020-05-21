@@ -21,8 +21,8 @@ export class RaffleService {
     return this.httpClient.get<number[]>(`/api/RandomNumber/?quantityNumbers=6`)
   }
 
-  CheckResult(raffleDataUser: RaffleDataUser): Observable<Raffle> {
-    return this.httpClient.post<Raffle>(`/api/CheckResult/`, raffleDataUser, this.httpOptions)
+  CheckResult(raffleDataUser: RaffleDataUser): Observable<any> {
+    return this.httpClient.post<any>(`/api/CheckResult/`, raffleDataUser, this.httpOptions)
   }
 
 }
