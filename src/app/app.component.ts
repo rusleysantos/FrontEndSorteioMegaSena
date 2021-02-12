@@ -50,8 +50,6 @@ export class AppComponent {
     `
 
     this.raffleService.CheckResult(this.raffleDataUser).subscribe((raffle: any) => {
-      debugger;
-
      
         this.Status = "Sucesso";
         this.MessageUser = "Ocorreu tudo bem ao realizar o sorteio";
