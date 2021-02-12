@@ -18,6 +18,7 @@ export class RaffleService {
   }
 
   RandomNumber(): Observable<number[]> {
+    debugger;
     return this.httpClient.get<number[]>(`/api/RandomNumber/?quantityNumbers=6`)
   }
 
