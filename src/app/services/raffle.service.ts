@@ -18,7 +18,7 @@ export class RaffleService {
   }
 
   RandomNumber(): Observable<number[]> {
-    return this.httpClient.get<number[]>(`/api/RandomNumber/?quantityNumbers=6`)
+    return this.httpClient.get<number[]>(`http://rusleysantos-001-site1.etempurl.com/api/RandomNumber/?quantityNumbers=6`)
   }
 
   CheckResult(raffleDataUser: RaffleDataUser): Observable<any> {
