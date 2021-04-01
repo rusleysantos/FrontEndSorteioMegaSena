@@ -1,6 +1,6 @@
 {
     "/api/*": {
-        "target": "http://rusleysantos-001-site1.etempurl.com",
+        "target": "https://apimega.azurewebsites.net",
         "secure": false,
         "logLevel": "debug",
         "changeOrigin": true
